@@ -1,0 +1,252 @@
+/* Drivers Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+  --bg-gradient-start: #1c1e26;
+  --bg-gradient-end: #2c2f3f;
+  --header-bg: #1a1c25;
+  --text-color: white;
+  --accent-start: #ffca28;
+  --accent-end: #ff9800;
+  --card-bg: #353849;
+  --shadow-color-start: #ffca28;
+  --shadow-color-end: #ff9800;
+  --link-color: white;
+}
+body.light-mode {
+  --bg-gradient-start: #f5f7fa;
+  --bg-gradient-end: #e2e8f0;
+  --header-bg: #ffffff;
+  --text-color: #222;
+  --accent-start: #ff9800;
+  --accent-end: #ffca28;
+  --card-bg: #ffffff;
+  --shadow-color-start: #ff9800;
+  --shadow-color-end: #ffca28;
+  --link-color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+header {
+  background: var(--header-bg);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent-start);
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--accent-start);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#mode-toggle {
+  background: none;
+  border: 2px solid var(--accent-start);
+  color: var(--accent-start);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+#mode-toggle:hover {
+  background: var(--accent-start);
+  color: #000;
+}
+body.light-mode nav.active a {
+  color: white;
+}
+
+.active-tab{
+  color:color: var(--accent-start);
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  transition: color 0.3s ease;
+}
+footer {
+  background: var(--header-bg);
+  padding: 20px;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: var(--accent-start);
+}
+footer div a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.section {
+  margin-top: 60px;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  color: var(--text-color);
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-start);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.drivers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.driver-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
+}
+.driver-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.driver-card img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: filter 0.3s ease;
+}
+body.light-mode .driver-card img {
+  filter: brightness(0.95);
+}
+.driver-card h3 {
+  margin-bottom: 5px;
+}
+.rating {
+  color: var(--accent-start);
+  margin-bottom: 10px;
+}
+.driver-card button {
+  margin-top: 12px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 8px var(--shadow-color-start), 0 0 16px var(--shadow-color-end);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.driver-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px var(--shadow-color-start), 0 0 24px var(--shadow-color-end);
+}
+.contacts {
+  text-align: center;
+  color: var(--text-color);
+}
+.contacts a {
+  color: var(--accent-start);
+  transition: color 0.3s;
+}
+.contacts a:hover {
+  color: var(--accent-end);
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #2a2c38;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  nav.active {
+    display: flex;
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 768px) {
+  .landing-section {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+  }
+  .landing-section .text-section {
+    flex: 1;
+    padding-right: 20px;
+  }
+  .image-section {
+    flex: 1;
+  }
+}

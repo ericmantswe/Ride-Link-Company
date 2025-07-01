@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | RideLink Botswana</title>
+  <meta name="description" content="Get in touch with BIUST RideLink for safe and affordable taxi transport in Palapye. Reach out via email, phone, or the contact form." />
+  <link rel="icon" href="https://via.placeholder.com/32?text=Favicon" type="image/x-icon" />
+  <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="contacts.css"><link>
+  <link rel="stylesheet" href="Home.css"><link>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="./Images/light mode logo.png" alt="RideLink Logo" class="logo" />
+      <nav id="mobileMenu">
+        <a href="./index.html">Home</a>
+        <a href="./drivers.html">Drivers</a>
+        <a href="./contacts.html" id="active-tab">Contact</a>
+      </nav>
+      <button id="mode-toggle" aria-label="Toggle light and dark mode">Light Mode</button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-wrapper">
+      <div class="contact-image">
+        <img src="./Images/light.mode.background.png" alt="Taxi Contact" />
+      </div>
+      <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <p>If you have questions or want to report an issue, contact us here. We’ll respond as soon as possible!</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+      
+          <input type="hidden" name="access_key" value="f53f9260-d38f-4d53-9e2d-e3dc147a28e1">
+
+          <input name="name" type="text" placeholder="Your Name" required />
+          <input name="email" type="email" placeholder="Your Email" required />
+          <textarea name="messege" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <p><strong>Email:</strong> <a href="mailto:biustridelink@gmail.com">biustridelink@gmail.com</a></p>
+          <p><strong>Phone:</strong> +267 72 326 496</p>
+          <p><strong>Location:</strong> BIUST Campus, Palapye</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BIUST RideLink. All rights reserved.</p>
+    <p>
+      Follow us on
+      <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a> |
+      <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+    </p>
+    <div>
+      <a href="https://www.flaticon.com/free-icons/trust" title="trust icons">Trust icons created by berkahicon - Flaticon</a>
+    </div>
+  </footer>
+</body>
+</html>

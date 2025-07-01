@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affordable Taxi Service for BIUST Students | RideLink Botswana</title>
+  <meta name="description" content="BIUST RideLink connects BIUST students with trusted, affordable taxi drivers in Botswana. Enjoy fair, safe, and reliable transportation with verified drivers. Book your ride easily and avoid overcharging." />
+  <link rel="stylesheet" href="./Home.css" />
+  <link rel="icon" href="https://via.placeholder.com/32?text=Favicon" type="image/x-icon" />
+  <script src="./app.js" defer></script>
+
+  <!-- Loader Styles -->
+  <style>
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .loader-inner {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+    .ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-style: solid;
+    }
+    .r1 { border-top-color: #FFD700; animation: rotate1 1.4s linear infinite; filter: drop-shadow(0 0 10px #FFD700); }
+    .r2 { border-top-color: #FF0000; animation: rotate2 1.9s linear infinite; filter: drop-shadow(0 0 10px #FF0000); }
+    .r3 { border-top-color: #000000; animation: rotate3 2.3s linear infinite; filter: drop-shadow(0 0 10px #555); }
+    .r4 { border-top-color: #FFA500; animation: rotate4 2.8s linear infinite; filter: drop-shadow(0 0 10px #FFA500); }
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    @keyframes rotate1 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes rotate2 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes rotate3 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes rotate4 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+
+  <!-- LocalBusiness Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "BIUST RideLink",
+    "description": "Affordable and trusted taxi service connecting BIUST students with reliable drivers in Botswana.",
+    "url": "https://yourdomain.com",
+    "telephone": "+26772326496",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Palapye, Botswana"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Palapye",
+      "addressRegion": "Central District",
+      "addressCountry": "BW"
+    },
+    "logo": "https://yourdomain.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/yourpage",
+      "https://twitter.com/yourprofile"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+      <div class="ring r4"></div>
+      <div class="progress-text" id="progress-text">0%</div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+    <header>
+      <div class="header-content">
+          <img src="./Images/light mode logo.png" alt="RideLink Logo" class="logo" />
+          <nav id="mobileMenu">
+              <a href="./index.html" id="active-tab">Home</a>
+              <a href="./drivers.html">Drivers</a>
+              <a href="./contacts.html">Contact</a>
+          </nav>
+          <button id="mode-toggle" aria-label="Toggle light and dark mode">Light Mode</button>
+          <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="landing-section">
+        <div class="text-section">
+          <h1>"No more overcharging. Just honest rides"</h1>
+          <p>BIUST RideLink connects you with trusted, affordable taxi drivers. No more overcharging — just fair, student-friendly rides in and around BIUST. Simple. Honest. Local.</p>
+          <a href="./Mainwhatsappform.html"><button>Book Now</button></a>
+        </div>
+        <div class="image-section">
+          <img src="./Images/hero image.png" alt="Taxi Illustration" />
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About RideLink</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+          BIUST RideLink is the trusted and affordable taxi service for BIUST students and residents of Palapye, Botswana. Our platform connects you with reliable, verified drivers who provide fair prices and safe rides. Say goodbye to overcharging and hello to easy, student-friendly transport in and around BIUST and Palapye.
+        </p>
+      </section>
+
+      <section id="drivers" class="section">
+        <h2>Top/Hot Drivers🔥</h2>
+        <div class="drivers-list">
+          <div class="driver-card">
+            <img src="./Images/driver images/elizeu-dias-2EGNqazbAMk-unsplash.jpg.crdownload" alt="Car Image of John D's taxi" />
+            <h3>John D.</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>Palapye - BIUST</p>
+            <p>Plate: B123ABC</p>
+            <p>P40 per trip</p>
+            <a href="Mainwhatsappform.html"><button>Book Now</button></a>
+          </div>
+          <div class="driver-card">
+            <img src="./Images/driver images/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="Car Image of Sarah K's taxi" />
+            <h3>Sarah K.</h3>
+            <div class="rating">⭐⭐⭐⭐</div>
+            <p>BIUST - Mall</p>
+            <p>Plate: B456XYZ</p>
+            <p>P40 per trip</p>
+            <a href="./Mainwhatsappform.html"><button>Book Now</button></a>
+          </div>
+          <div class="driver-card">
+            <img src="./Images/driver images/pacha-shot-s-d0peGya6R5Y-unsplash.jpg" alt="Car Image of Tebogo M's taxi" />
+            <h3>Tebogo M.</h3>
+            <div class="rating">⭐⭐⭐⭐⭐</div>
+            <p>BIUST - Bus Rank</p>
+            <p>Plate: B789QWE</p>
+            <p>P35 per trip</p>
+            <a href="./Mainwhatsappform.html"><button>Book Now</button></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contacts">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:biustridelink@gmail.com">biustridelink@gmail.com</a></p>
+        <p>Phone: +267 72 326 496</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 BIUST RideLink. All rights reserved.</p>
+      <p>Follow us on 
+        <a href="https://www.facebook.com/yourpage" target="_blank">Facebook</a> | 
+        <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+        <div>
+          <a href="https://www.flaticon.com/free-icons/trust" title="trust icons">Trust icons created by berkahicon - Flaticon</a>
+        </div>
+      </p>
+    </footer>
+  </div>
+
+  <!-- Loader Script -->
+  <script>
+    const text = document.getElementById('progress-text');
+    const loader = document.getElementById('loader');
+    const main = document.getElementById('main-content');
+    let progress = 0;
+
+    const interval = setInterval(() => {
+      progress += 1;
+      text.textContent = `${progress}%`;
+      if (progress >= 100) {
+        clearInterval(interval);
+        loader.style.display = 'none';
+        main.style.display = 'block';
+      }
+    }, 40); // 100 * 40ms = ~4 seconds
+  </script>
+</body>
+</html>

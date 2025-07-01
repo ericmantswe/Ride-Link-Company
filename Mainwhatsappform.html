@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RideLink WhatsApp Booking</title>
+  <meta name="description" content="Book your ride with RideLink via WhatsApp. Connect with our trusted drivers for affordable and reliable transportation.">
+  <link rel="stylesheet" href="./mainwhatsappfom.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="form-container" role="main">
+    <h1>RideLink WhatsApp Booking</h1>
+    <form id="bookingForm" autocomplete="on" onsubmit="sendToWhatsapp(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+
+      <label for="pickup">Pickup Location</label>
+      <input type="text" id="pickup" name="pickup" required>
+
+      <label for="destination">Destination</label>
+      <input type="text" id="destination" name="destination" required>
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="driver">Select Top Driver</label>
+      <select id="driver" name="driver" required>
+        <option value="26777572432|John">John D. (B123ABC)</option>
+        <option value="26779876543|Sarah">Sarah K. (B456XYZ)</option>
+        <option value="26770123456|Tebogo">Tebogo M. (B789QWE)</option>
+      </select>
+
+      <button type="submit">Book via WhatsApp</button>
+    </form>
+    
+  </main>
+
+  <a href="index.html" class="button back-button" style="width: 90%; max-width: 500px; text-align: center; padding: 14px; border-radius: 8px;" rel="noopener noreferrer">⬅ Return to Homepage</a>
+
+</body>
+</html>

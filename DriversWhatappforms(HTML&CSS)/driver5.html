@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RideLink Booking - Driver Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1c1e26, #2c2f3f);
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main.form-container {
+      background-color: #2f3344;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      width: 90%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .form-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #25d366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #1ebe5d;
+    }
+
+    .confirmation {
+      margin-top: 15px;
+      background-color: #28a745;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+      font-weight: bold;
+    }
+
+    .back-button {
+      background: #ffca28;
+      color: #000;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background: #f2b400;
+    }
+
+    @media (max-width: 480px) {
+      main.form-container {
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      input, button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="form-container" role="main">
+    <h1>RideLink WhatsApp Booking</h1>
+    <p><strong>Booking Driver:</strong> John D.</p>
+    <form id="bookingForm" autocomplete="on" onsubmit="sendToWhatsapp(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+
+      <label for="pickup">Pickup Location</label>
+      <input type="text" id="pickup" name="pickup" required>
+
+      <label for="destination">Destination</label>
+      <input type="text" id="destination" name="destination" required>
+
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <button type="submit">Book via WhatsApp</button>
+    </form>
+    <div class="confirmation" id="confirmationMessage">✅ Your booking request has been sent via WhatsApp!</div>
+  </main>
+
+  <a href="../index.html" class="button back-button" style="width: 90%; max-width: 500px; text-align: center; padding: 14px; border-radius: 8px;" rel="noopener noreferrer">⬅ Return to Homepage</a>
+
+  <script>
+    // Driver info should be replaced per driver file
+    const DRIVER_NAME = "John D.";
+    const DRIVER_PHONE = "26777572432";
+
+    function sendToWhatsapp(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const pickup = document.getElementById("pickup").value.trim();
+      const destination = document.getElementById("destination").value.trim();
+      const time = document.getElementById("time").value;
+
+      const message = `🚨 *RideLink Booking Alert* 🚖\n\n` +
+                      `*Driver:* ${DRIVER_NAME}\n` +
+                      `*Customer:* ${name}\n` +
+                      `*Pickup Location:* ${pickup}\n` +
+                      `*Destination:* ${destination}\n` +
+                      `*Time:* ${time}\n\n` +
+                      `Please respond to confirm this trip.`;
+
+      const whatsappURL = `https://wa.me/${DRIVER_PHONE}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+      const confirmation = document.getElementById("confirmationMessage");
+      confirmation.style.display = "block";
+    }
+  </script>
+</body>
+</html>
